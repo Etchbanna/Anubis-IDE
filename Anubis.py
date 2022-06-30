@@ -345,6 +345,8 @@ class UI(QMainWindow):
         file_name = QFileDialog.getOpenFileName(self,'Open File','/home')
 
         if file_name[0]:
+       	    if file_name[0].endswith('.cs'):
+       	    	text2.append("C Sharp File Detected ")
             f = open(file_name[0],'r')
             with f:
                 data = f.read()
